@@ -49,14 +49,68 @@ sudo pacman -Sy <packages from up here>
   
   <th align="center" colspan=3>Cosmic desktop</th>
   <tr align="center">
-    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-epoch-git">cosmic-epoch-git</a></td>
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-session-git">cosmic-session-git</a></td>
     <td>
 	    <details>
-		<summary>3</summary>
-		<a target="_blank" href="https://aur.archlinux.org/packages/adw-gtk3-git">adw-gtk3-git</a><br />
+		<summary>20</summary>
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-applets-git">cosmic-applets-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-applibrary-git">cosmic-applibrary-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-bg-git">cosmic-bg-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-comp-git">cosmic-comp-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-greeter-git">cosmic-greeter-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-icons-git">cosmic-icons-git</a><br />
 		<a target="_blank" href="https://aur.archlinux.org/packages/pop-icon-theme-git">pop-icon-theme-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-launcher-git">cosmic-launcher-git</a><br />
 		<a target="_blank" href="https://aur.archlinux.org/packages/pop-launcher-git">pop-launcher-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-notifications-git">cosmic-notifications-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-osd-git">cosmic-osd-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-panel-git">cosmic-panel-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-randr-git">cosmic-randr-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-screenshot-git">cosmic-screenshot-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-settings-daemon-git">cosmic-settings-daemon-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/adw-gtk3-git">adw-gtk3-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-settings-git">cosmic-settings-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-workspaces-git">cosmic-workspaces-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/xdg-desktop-portal-cosmic-git">xdg-desktop-portal-cosmic-git</a><br />
 		<a target="_blank" href="https://aur.archlinux.org/packages/pop-shell-plugin-system76-power-git">pop-shell-plugin-system76-power-git</a> <i>(optional; from build, missing other deps)</i><br />
+	    </details>
+    </td>
+    <td>✖️</td>
+  </tr>
+  <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-edit-git">cosmic-edit-git</a></td>
+    <td>
+	    <details>
+		<summary>2</summary>
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-icons-git">cosmic-icons-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/pop-icon-theme-git">pop-icon-theme-git</a><br />
+	    </details>
+    </td>
+    <td>✖️</td>
+  </tr>
+  <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-files-git">cosmic-files-git</a></td>
+    <td>0</td>
+    <td>✖️</td>
+  </tr>
+  <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-store-git">cosmic-store-git</a></td>
+    <td>
+	    <details>
+		<summary>2</summary>
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-icons-git">cosmic-icons-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/pop-icon-theme-git">pop-icon-theme-git</a><br />
+	    </details>
+    </td>
+    <td>✖️</td>
+  </tr>
+  <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/cosmic-term-git">cosmic-term-git</a></td>
+    <td>
+	    <details>
+		<summary>2</summary>
+		<a target="_blank" href="https://aur.archlinux.org/packages/cosmic-icons-git">cosmic-icons-git</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/pop-icon-theme-git">pop-icon-theme-git</a><br />
 	    </details>
     </td>
     <td>✖️</td>
