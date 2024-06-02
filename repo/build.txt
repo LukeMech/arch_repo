@@ -43,12 +43,10 @@ amulet-map-editor-git     # nice minecraft map editor
 | python-pymctranslate-git
 yt-dlg                    # gui for yt-dlp
 czkawka-gui-bin           # nice directories and space manager
-syncthing-git             # git version of sync files client
-syncthingtray-git
+syncthingtray-git             # git version of sync files client bundled with gui
 | c++utilities-git
 | qtforkawesome-git
 | qtutilities-git
-syncthing-appmenu
 keepassxc-git             # git version of keepass
 
 # --- Server ---
