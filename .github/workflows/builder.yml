@@ -59,6 +59,8 @@ jobs:
   
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: 'true'
 
       - name: Prepare build
         run: |
@@ -96,6 +98,7 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
           ref: 'main'
+          submodules: 'true'
           
       - name: Import GPG key    
         uses: crazy-max/ghaction-import-gpg@v6
@@ -114,6 +117,7 @@ jobs:
           RUNNUM: ${{ github.run_number }}
         run: |
           git config --global --add safe.directory $PROJECT_DIR
+          git submodule update --remote
           cd repo/x86_64
           bash ../scripts/repo.sh
           

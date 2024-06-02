@@ -1,11 +1,11 @@
 # 😎 Add repo
 🔑 Firstly, get key by pacman-key
 ```sh
-sudo pacman-key --recv-keys 145370436A715D37
+sudo pacman-key --recv-keys  134757291BB9BD83
 ```
 🔏 And after it's imported, sign it
 ```bash
-sudo pacman-key --lsign-key 145370436A715D37
+sudo pacman-key --lsign-key 134757291BB9BD83
 ```
 🚀 Then, add repository to pacman
 ```shell
