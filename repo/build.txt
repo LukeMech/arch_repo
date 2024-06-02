@@ -8,10 +8,33 @@ mkinitcpio-firmware       # install to pc
 | wd719x-firmware
 
 # --- Cosmic desktop ---
-cosmic-epoch-git
-| adw-gtk3-git
-| pop-icon-theme-git
-| pop-launcher-git
+# main desktop
+cosmic-session-git      
+| cosmic-applets-git
+| cosmic-applibrary-git
+| cosmic-bg-git
+| cosmic-comp-git
+| cosmic-greeter-git
+| cosmic-icons-git
+| | pop-icon-theme-git
+| cosmic-launcher-git
+| | pop-launcher-git
+| cosmic-notifications-git
+| cosmic-osd-git
+| cosmic-panel-git
+| cosmic-randr-git
+| cosmic-screenshot-git
+| cosmic-settings-daemon-git
+| | adw-gtk3-git
+| cosmic-settings-git
+| cosmic-workspaces-git
+| xdg-desktop-portal-cosmic-git
+# additional apps
+cosmic-edit-git
+cosmic-files-git
+cosmic-store-git
+cosmic-term-git
+# 3rd party apps
 cosmic-webapps-git        # nice webapps manager for cosmic desktop
 cosmic-tasks-git          # nice taks manager for cosmic
 
