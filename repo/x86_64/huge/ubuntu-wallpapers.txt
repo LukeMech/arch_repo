@@ -1,0 +1,9 @@
+filename: ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zst
+version: 24.04.2-1
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zst.sig
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstaa
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstab
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstac
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstad
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstae
+./ubuntu-wallpapers-24.04.2-1-any.pkg.tar.zstaf
