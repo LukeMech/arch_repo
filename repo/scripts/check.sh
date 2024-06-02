@@ -40,7 +40,8 @@ while IFS= read -r package_name || [ -n "$package_name" ]; do
 	
     echo "[INFO] Fetching package ${package_name}..."
     # Download current package data
-    RESPONSE=$(curl -s "https://aur.archlinux.org/rpc/?v=5&type=info&arg=${package_name}")
+	encoded_package_name=$(echo $package_name | sed 's/\+/\\%2B/g')
+    RESPONSE=$(curl -s "https://aur.archlinux.org/rpc/?v=5&type=info&arg=${encoded_package_name}")
     PACKAGE_VERSION=$(echo ${RESPONSE} | jq -r '.results[0].Version' | tr ':' '-')
     
     # Get latest version info
