@@ -39,5 +39,5 @@ if [ -f $json_file ]; then
          cat "$pkgbuild_content" >> PKGBUILD
      fi
 
-     echo "$deps" > "build/add.packges"
+     echo "$deps" > "build/add.packages"
 fi

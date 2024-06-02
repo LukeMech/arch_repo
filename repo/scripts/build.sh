@@ -53,7 +53,7 @@ if [ -f ".SRCINFO" ]; then
         <(sed -n -e 's/^[[:space:]]*\(make\)\?depends\(_x86_64\)\? = \([[:alnum:][:punct:]]*\)[[:space:]]*$/\3/p' .SRCINFO)
 
     # Install dependencies using yay
-    sudo -H -u builder yay --sync --noconfirm "${PKGDEPS[@]}"
+    sudo -H -u builder yay --nocheck --sync --noconfirm "${PKGDEPS[@]}"
 else
     echo ".SRCINFO not found. Skipping dependency installation."
 fi
@@ -64,7 +64,7 @@ if [ -f "add.packages" ]; then
 	
 	while read -r dep; do
 		echo "[INFO] Installing ${dep}..."	
-	    sudo -H -u builder yay --sync --noconfirm "$dep"
+	    sudo -H -u builder yay --nocheck --sync --noconfirm "$dep"
      done < "add.packages"
 fi
 
