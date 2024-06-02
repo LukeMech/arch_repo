@@ -1,0 +1,60 @@
+# "|" are used to create depends tree here, # for comments ;p
+
+# --- Missing firmware ---
+mkinitcpio-firmware       # install to pc
+| aic94xx-firmware
+| ast-firmware
+| upd72020x-fw
+| wd719x-firmware
+
+# --- Cosmic desktop ---
+cosmic-epoch-git
+| adw-gtk3-git
+| pop-icon-theme-git
+| pop-launcher-git
+cosmic-webapps-git        # nice webapps manager for cosmic desktop
+cosmic-tasks-git          # nice taks manager for cosmic
+
+# --- Fonts ---
+ttf-ms-win11-auto         # ms fonts
+ttf-twemoji               # twitter(x) emojis
+
+# --- AUR Helpers --- 
+octopi                    # gui package manager
+| yay-git                 # octopi depend but also nice aur manager
+| alpm_octopi_utils
+| qt-sudo-git
+
+# --- Programs ---
+ubuntu-wallpapers         # H Ubuntu wallpapers
+brave-bin                 # H Brave browser
+visual-studio-code-bin    # H vscode
+variety-git               # set wallpapers daily
+ventoy-bin                # ventoy, multiboot isos on usb
+sklauncher-bin            # minecraft launcher
+amulet-map-editor-git     # nice minecraft map editor
+| python-amulet-core-git
+| | python-portalocker
+| python-amulet-leveldb-git
+| | python-leveldb
+| python-amulet-nbt
+| | python-mutf8
+| python-minecraft-model-reader
+| python-pymctranslate-git
+yt-dlg                    # gui for yt-dlp
+czkawka-gui-bin           # nice directories and space manager
+syncthing-git             # git version of sync files client
+syncthingtray-git
+| c++utilities-git
+| qtforkawesome-git
+| qtutilities-git
+syncthing-appmenu
+keepassxc-git             # git version of keepass
+
+# --- Server ---
+realmd-git                # DBus service for joining hosts to Active Directory and FreeIPA
+| adcli
+cockpit-docker            # yeah, name says whats this
+cockpit-navigator-git     # cockpit files navigator... lol
+cockpit-composer          # system images yeah
+| osbuild-composer

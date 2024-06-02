@@ -1,0 +1,3 @@
+visual-studio-code-bin visual-studio-code vscode code
+brave-bin brave brave-browser
+ubuntu-wallpapers

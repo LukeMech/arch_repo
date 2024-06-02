@@ -1,0 +1,97 @@
+name: Lukemech-huge Build
+
+permissions:
+  contents: write         
+  pull-requests: write      
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build lukemech-huge
+    runs-on: ubuntu-latest    
+    container:
+      image: archlinux:latest
+
+    steps:
+      - name: Install git
+        run: pacman -Sy git --noconfirm
+        
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Build packages
+        env:
+          PROJECT_DIR: ${{ github.workspace }}
+          RUNNUM: ${{ github.run_number }}
+        run: |
+          git config --global --add safe.directory $PROJECT_DIR
+          pkgver=$(printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)")
+          cd lukemech-huge
+          mkdir -p ../tmp/build || true
+          cp -r ./* ../tmp/build
+          cd ../tmp
+          
+          sed -i "s/{PKGVER}/$pkgver/g" build/PKGBUILD
+          sed -i "s/{RUNNUM}/$RUNNUM/g" build/PKGBUILD
+          bash ../repo/scripts/build.sh
+          
+      - name: Upload built packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: lukemech-huge
+          path: tmp/build/*.pkg*
+
+  update:
+    name: Update repository
+    needs: [ build ]
+    
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+
+    steps:
+     
+      - name: Install git
+        run: pacman -Sy git --noconfirm
+          
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: 'main'
+          
+      - name: Import GPG key    
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          
+      - name: Download pkgs
+        uses: actions/download-artifact@v4
+        with:
+          path: /artifacts
+          
+      - name: Update repo
+        env:
+          PROJECT_DIR: ${{ github.workspace }}
+        run: |
+          git config --global --add safe.directory $PROJECT_DIR
+          cd repo/x86_64
+          bash ../scripts/repo.sh
+          
+      - name: Prepare commit
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Automated build" || echo "No changes to commit"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          force: true
