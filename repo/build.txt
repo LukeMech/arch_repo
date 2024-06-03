@@ -49,6 +49,7 @@ octopi                    # gui package manager
 | qt-sudo-git
 
 # --- Programs ---
+extension-manager         # for GNOME
 ubuntu-wallpapers         # H Ubuntu wallpapers
 brave-bin                 # H Brave browser
 visual-studio-code-bin    # H vscode
@@ -66,11 +67,10 @@ amulet-map-editor-git     # nice minecraft map editor
 | python-pymctranslate-git
 yt-dlg                    # gui for yt-dlp
 czkawka-gui-bin           # nice directories and space manager
-syncthingtray-git             # git version of sync files client bundled with gui
-| c++utilities-git
-| qtforkawesome-git
-| qtutilities-git
-keepassxc-git             # git version of keepass
+syncthingtray             # git version of sync files client bundled with gui
+| c++utilities
+| qtforkawesome
+| qtutilities
 
 # --- Server ---
 realmd-git                # DBus service for joining hosts to Active Directory and FreeIPA
