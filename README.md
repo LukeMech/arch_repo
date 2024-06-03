@@ -170,6 +170,23 @@ sudo pacman -Sy <packages from up here>
   
   <th align="center" colspan=3>Programs</th>
   <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/extension-manager">extension-manager</a></td>
+    <td>0</td>
+    <td>✔️</td>
+  </tr>
+  <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/syncthingtray">syncthingtray</a></td>
+    <td>
+      <details>
+        <summary>3</summary>
+        <a target="_blank" href="https://aur.archlinux.org/packages/c++utilities">c++utilities</a><br />
+        <a target="_blank" href="https://aur.archlinux.org/packages/qtforkawesome">qtforkawesome</a><br />
+		<a target="_blank" href="https://aur.archlinux.org/packages/qtutilities">qtutilities</a>
+      </details>
+    </td>
+    <td>✔️</td>
+  </tr>
+  <tr align="center">
     <td><a target="_blank" href="https://aur.archlinux.org/packages/brave-bin">brave-bin</a></td>
     <td>0</td>
     <td>✔️</td>
