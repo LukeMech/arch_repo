@@ -171,7 +171,12 @@ sudo pacman -Sy <packages from up here>
   <th align="center" colspan=3>Programs</th>
   <tr align="center">
     <td><a target="_blank" href="https://aur.archlinux.org/packages/extension-manager">extension-manager</a></td>
-    <td>0</td>
+    <td>
+      <details>
+        <summary>1</summary>
+        <a target="_blank" href="https://aur.archlinux.org/packages/text-engine">text-engine</a>
+       </details>
+    </td>
     <td>✔️</td>
   </tr>
   <tr align="center">
