@@ -49,6 +49,7 @@ octopi                    # gui package manager
 | qt-sudo-git
 
 # --- Programs ---
+waydroid-git
 extension-manager         # for GNOME
 | text-engine
 ubuntu-wallpapers         # H Ubuntu wallpapers
