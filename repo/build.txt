@@ -50,6 +50,7 @@ octopi                    # gui package manager
 
 # --- Programs ---
 extension-manager         # for GNOME
+| text-engine
 ubuntu-wallpapers         # H Ubuntu wallpapers
 brave-bin                 # H Brave browser
 visual-studio-code-bin    # H vscode
