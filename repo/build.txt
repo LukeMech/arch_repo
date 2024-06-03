@@ -49,6 +49,7 @@ octopi                    # gui package manager
 | qt-sudo-git
 
 # --- Programs ---
+nasa-wallpaper            # hehe, use nasa-wallpaper -n
 waydroid-git
 extension-manager         # for GNOME
 | text-engine
