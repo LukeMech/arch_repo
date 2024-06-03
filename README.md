@@ -170,6 +170,11 @@ sudo pacman -Sy <packages from up here>
   
   <th align="center" colspan=3>Programs</th>
   <tr align="center">
+    <td><a target="_blank" href="https://aur.archlinux.org/packages/nasa-wallpaper">nasa-wallpaper</a></td>
+    <td>0</td>
+    <td>✖️</td>
+  </tr>
+  <tr align="center">
     <td><a target="_blank" href="https://aur.archlinux.org/packages/waydroid-git">waydroid-git</a></td>
     <td>0</td>
     <td>✔️</td>
