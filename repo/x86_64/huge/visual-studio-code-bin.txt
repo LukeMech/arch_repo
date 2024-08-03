@@ -1,5 +1,5 @@
-filename: visual-studio-code-bin-1.91.1-1-x86_64.pkg.tar.zst
-version: 1.91.1-1
-./visual-studio-code-bin-1.91.1-1-x86_64.pkg.tar.zst.sig
-./visual-studio-code-bin-1.91.1-1-x86_64.pkg.tar.zstaa
-./visual-studio-code-bin-1.91.1-1-x86_64.pkg.tar.zstab
+filename: visual-studio-code-bin-1.92.0-1-x86_64.pkg.tar.zst
+version: 1.92.0-1
+./visual-studio-code-bin-1.92.0-1-x86_64.pkg.tar.zst.sig
+./visual-studio-code-bin-1.92.0-1-x86_64.pkg.tar.zstaa
+./visual-studio-code-bin-1.92.0-1-x86_64.pkg.tar.zstab
