@@ -1,0 +1,5 @@
+filename: code-server-4.93.1-1-x86_64.pkg.tar.zst
+version: 4.93.1-1
+./code-server-4.93.1-1-x86_64.pkg.tar.zst.sig
+./code-server-4.93.1-1-x86_64.pkg.tar.zstaa
+./code-server-4.93.1-1-x86_64.pkg.tar.zstab
