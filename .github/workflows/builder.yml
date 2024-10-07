@@ -1,0 +1,134 @@
+name: AUR Build
+
+permissions:
+  contents: write         
+  pull-requests: write      
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'repo/build.txt'
+  schedule:
+    - cron: '0 */6 * * *'
+    
+  workflow_dispatch:
+
+jobs:
+  check-aur:
+    name: Check updates
+
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      build: ${{ steps.set-matrix.outputs.build }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+          
+      - name: Check for updates
+        id: set-matrix
+        run: |
+          cd repo/x86_64
+          bash ../scripts/check.sh
+       
+      - name: Upload locally built packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: prebuilt
+          path: localBuild/*.pkg*
+
+  build:
+    name: Build ${{ matrix.pkg }}
+    needs: check-aur
+    if: ${{ needs.check-aur.outputs.build == 'true' }}
+    continue-on-error: true
+    
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.check-aur.outputs.matrix) }}
+    
+    steps:
+     
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          docker-images: false
+          swap-storage: false
+  
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+
+      - name: Prepare build
+        run: |
+          cd repo/x86_64
+          bash ../scripts/prepare.sh ${{ matrix.pkg }}
+          
+      - name: Build packages
+        uses: docker://archlinux:latest
+        with:
+          args: sh -c "cd repo/x86_64 && bash ../scripts/build.sh"
+          
+      - name: Upload built packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.pkg }}
+          path: repo/x86_64/build/*.pkg*
+
+  update:
+    name: Update repository
+    needs: [ check-aur, build ]
+    if: ${{ '!cancelled()' && needs.check-aur.outputs.build == 'true' }}
+    
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+
+    steps:
+     
+      - name: Install git
+        run: pacman -Sy git --noconfirm
+          
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: 'main'
+          submodules: 'true'
+          
+      - name: Import GPG key    
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          
+      - name: Download pkgs
+        uses: actions/download-artifact@v4
+        with:
+          path: /artifacts
+          
+      - name: Update repo
+        env:
+          PROJECT_DIR: ${{ github.workspace }}
+          RUNNUM: ${{ github.run_number }}
+        run: |
+          git config --global --add safe.directory $PROJECT_DIR
+          git submodule update --remote
+          cd repo/x86_64
+          bash ../scripts/repo.sh
+          
+      - name: Prepare commit
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Automated build" || echo "No changes to commit"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          force: true

@@ -1,0 +1,9 @@
+# "|" are used to create depends tree here, # for comments ;p
+
+filebrowser-git
+yay-git
+code-server
+code-server-marketplace
+guacamole-client
+guacamole-server
+libtelnet
