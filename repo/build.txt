@@ -1,4 +1,4 @@
-filebrowser
+filebrowser-bin
 yay
 code-server
 code-server-marketplace
